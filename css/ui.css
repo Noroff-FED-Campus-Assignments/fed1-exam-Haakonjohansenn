@@ -4,13 +4,357 @@
  * @tutorial https://web.dev/learn/css/flexbox/
  * @example https://fed-vocational-astro-course.vercel.app/en/html-css/module-3/media-queries
  */
+ @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Gentium+Book+Plus:ital,wght@1,700&family=Merriweather+Sans:wght@300&display=swap');
+
+
+ :root {
+  --main-color: #fca311;
+  --secondary-color: #14213D;
+  --black: #000000;
+  --white: #ffffff;
+  --header-font: 'Bebas Neue', cursive;
+  --body-font: 'Merriweather Sans', sans-serif;
+  --posts-color: #e5e5e5;
+}
 
 .c-card {
   border-radius: --radius-1;
 }
 
 .hero-image {
-  max-width: 480px;
+  background-image: linear-gradient(rgba(0,0,0,0.6), 
+  rgba(0,0,0, 0.6)), url(/images/joshua-fuller-Ts9WyLsLRBY-unsplash\ \(1\).jpg);
+  background-position: center 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 180px;
+}
+
+.hero-text-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 70px;
+}
+
+.discover-img-container {
+  margin-left: 20px;
+}
+
+.discover-the-unknown {
+  width: 54px;
+  height: 45px;
+}
+
+.read-blog-btn {
+  background-color: var(--main-color);
+  font-family: var(--header-font);
+  padding: 7px;
+  margin-top: 10px;
+  border-radius: 17px;
+  margin-right: 25px;
+  border: none;
+}
+
+.read-blog-btn:hover {
+  color: var(--white);
+  transition: 0.1s ease-in-out;
+}
+
+.hero-secondary-image {
+  height: 117px;
+  width: 91px;
+  padding-top: 20px;
+  margin-left: 20px;
+}
+
+.hero-secondary-text-image {
+  width: 117px;
+  height: 40px;
+}
+
+.hero-secondary-parent {
+  width: 100%;
+  background-color: var(--secondary-color);
+  height: 160px;
+}
+
+.hero-secondary-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.hero-secondary-text {
+  padding-top: 60px;
+  margin-right: 15px;
+}
+
+.carousel-parent h1 {
+  font-family: var(--body-font);
+  font-size: 14px;
+  font-weight: 900;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.post-images {
+  object-fit: cover;
+  width: 90px;
+  height: 90px;
   margin: auto;
-  aspect-ratio: var(--ratio-landscape);
+}
+
+.post-title h2 {
+  font-family: var(--body-font);
+  font-size: 10px;
+  max-width: 80px;
+  text-align: center;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin: 10px;
+}
+
+.parent-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.carousel-container {
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-items {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+}
+
+.carousel-items .parent-container {
+  width: 200px;
+  margin-right: 10px;
+}
+
+.carousel-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.carousel-nav button {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 5px 10px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.carousel-nav button:focus {
+  outline: none;
+}
+
+.carousel-nav button:hover {
+  background-color: #f5f5f5;
+}
+
+@media (min-width: 768px) {
+  .hero-image {
+    background-image: linear-gradient(rgba(0,0,0,0.6), 
+    rgba(0,0,0, 0.6)), url(/images/joshua-fuller-Ts9WyLsLRBY-unsplash\ \(1\).jpg);
+    background-position: center 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 300px;
+  }
+  
+  .hero-text-container {
+    padding-top: 100px;
+  }
+  
+  .discover-img-container {
+    margin-left: 20px;
+  }
+
+  .discover-the-unknown {
+    width: 85px;
+    height: 100px;
+  }
+
+  .discover-img-container {
+    margin-left: 50px;
+  }
+  
+  .read-blog-btn {
+    background-color: var(--main-color);
+    font-family: var(--header-font);
+    padding: 7px;
+    width: 100px;
+    margin-top: 35px;
+    border: none;
+    font-size: 18px;
+    border-radius: 17px;
+    margin-right: 70px;
+  }
+
+  .hero-secondary-image {
+    height: 220px;
+    width: 185px;
+    padding-top: 30px;
+    margin-left: 30px;
+  }
+  
+  .hero-secondary-text-image {
+    width: 290px;
+    height: 75px;
+  }
+  
+  .hero-secondary-parent {
+    width: 100%;
+    background-color: var(--secondary-color);
+    height: 300px;
+  }
+  
+  .hero-secondary-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .hero-secondary-text {
+    padding-top: 100px;
+    margin-right: 15px;
+  }
+
+  .post-images {
+    width: 150px;
+    height: 150px;
+    margin: auto;
+  }
+  
+  .post-title h2 {
+    font-family: var(--body-font);
+    font-size: 14px;
+    max-width: 150px;
+    text-align: center;
+  }
+  
+  .card-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin: 15px;
+  }
+  
+  .parent-container {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .carousel-container {
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .carousel-items {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .carousel-items .parent-container {
+    width: 300px;
+    margin-right: 10px;
+  }
+  
+  .carousel-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .carousel-nav button {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+}
+
+@media (min-width: 1200px) {
+  .hero-image {
+    background-image: linear-gradient(rgba(0,0,0,0.6), 
+    rgba(0,0,0, 0.6)), url(/images/joshua-fuller-Ts9WyLsLRBY-unsplash\ \(1\).jpg);
+    background-position: center 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 340px;
+  }
+  
+  .hero-text-container {
+    padding-top: 120px;
+  }
+  
+  .discover-img-container {
+    margin-left: 30px;
+  }
+
+  .discover-img-container {
+    margin-left: 50px;
+  }
+  
+  .read-blog-btn {
+    background-color: var(--main-color);
+    font-family: var(--header-font);
+    padding: 7px;
+    width: 120px;
+    margin-top: 35px;
+    border: none;
+    font-size: 20px;
+    border-radius: 20px;
+    margin-right: 70px;
+  }
+
+  .hero-secondary-image {
+    height: 260px;
+    width: 205px;
+    padding-top: 30px;
+    margin-left: 30px;
+  }
+  
+  .hero-secondary-text-image {
+    width: 340px;
+    height: 90px;
+  }
+  
+  .hero-secondary-parent {
+    width: 100%;
+    background-color: var(--secondary-color);
+    height: 340px;
+  }
+  
+  .hero-secondary-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .hero-secondary-text {
+    padding-top: 120px;
+    margin-right: 50px;
+  }
 }

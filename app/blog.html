@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/css/header-footer.css" rel="stylesheet" />
+    <link href="/css/blog.css" rel="stylesheet" />
+    <script defer src="/js/blog.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-parent">
+        <div class="logo-container">
+          <a href="index.html">
+            <img src="/images/Logo.png" class="logo-img" alt="logo" />
+          </a>
+        </div>
+        <div class="nav-bar-parent">
+          <nav class="nav-bar">
+            <ul class="nav-menu">
+              <li><a href="/index.html">Home</a></li>
+              <li><a href="/app/blog.html">Blog</a></li>
+              <li><a href="/app/about.html">About</a></li>
+              <li><a href="/app/contact.html">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="hero-header-section">
+        <div class="hero-header-image">
+          <div class="hero-header-container">
+            <div class="hero-header-text">
+              <h1>Explore The Unknown</h1>
+              <h1 class="blog-align">Blog</h1>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="blog-posts-section">
+        <div class="blog-posts-parent">
+          <h2 class="blog-header-title">Blog Posts</h2>
+          <input
+            type="search"
+            name="search"
+            id="search-bar"
+            placeholder="Search"
+          />
+          <div id="results-container"></div>
+        </div>
+        <div class="load-more-container">
+          <button id="load-more">Load More</button>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="parent-footer">
+        <div class="footer-logo-container">
+          <img src="/images/Logo.png" alt="logo" />
+        </div>
+        <div class="footer-nav">
+          <nav class="footer-navbar">
+            <ul class="footer-navmenu">
+              <li><a href="/app/contact.html">Contact Me</a></li>
+              <li><a href="/app/about.html">My story</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

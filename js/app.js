@@ -51,3 +51,74 @@ https://github.com/S3ak/fed-javascript1-api-calls/blob/main/examples/games.html#
  * @example https://github.com/S3ak/fed-javascript1-api-calls/blob/main/src/js/detail.js#L36
  * @param {item} item The object with properties from the fetched JSON data.
  */
+
+const resultsContainer = document.querySelector(".carousel-items");
+
+const url = "https://discovertublog.flywheelsites.com/wp-json/wp/v2/posts";
+
+async function fetchPosts() {
+  try {
+    const response = await fetch(url);
+    const jsonResult = await response.json();
+    const posts = jsonResult;
+
+    posts.forEach(function(post){
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(post.content.rendered, 'text/html');
+      const images = doc.querySelectorAll('img');
+      let imageHtml = '';
+      if (images.length > 0) {
+        const imageSrc = images[0].getAttribute('src');
+        imageHtml = `<img class="post-images" src="${imageSrc}" alt="${post.title.rendered}" />`;
+      }
+
+      resultsContainer.innerHTML += `
+        <div class="parent-container">
+          <div class="card-container">
+            <div class="post-image">
+              ${imageHtml}
+            </div>
+            <div class="post-title">
+              <h2>${post.title.rendered}</h2>
+            </div>
+          </div>
+        </div>
+      `;
+    });
+
+    const prevBtn = document.querySelector(".prev");
+    const nextBtn = document.querySelector(".next");
+    const items = document.querySelector(".carousel-items");
+    const itemWidth = 210;
+    const margin = 10;
+    let currentPosition = 0;
+    
+    prevBtn.addEventListener("click", () => {
+      currentPosition += itemWidth + margin;
+      if (currentPosition > 0) {
+        currentPosition = -(itemWidth + margin) * (posts.length - 1);
+      }
+      items.style.transform = `translateX(${currentPosition}px)`;
+    });
+    
+    nextBtn.addEventListener("click", () => {
+      currentPosition -= itemWidth + margin;
+      if (currentPosition <= -(itemWidth + margin) * (posts.length - 1)) {
+        currentPosition = 0;
+      }
+      items.style.transform = `translateX(${currentPosition}px)`;
+    });
+
+  } catch (e){
+    console.log(e);
+  };
+};
+
+fetchPosts();
+
+
+
+
+
+
+

@@ -1,0 +1,176 @@
+:root {
+  --main-color: #fca311;
+  --secondary-color: #14213D;
+  --black: #000000;
+  --white: #ffffff;
+  --header-font: 'Bebas Neue', cursive;
+  --body-font: 'Merriweather Sans', sans-serif;
+  --posts-color: #e5e5e5;
+}
+
+h1 {
+  text-align: center;
+  font-family: var(--body-font);
+  font-size: 16px;
+  padding-bottom: 20px;
+}
+
+.about-image {
+  width: 131px;
+  height: 187px;
+  margin-left: 10px;
+}
+
+.parent-container {
+  display: flex;
+  justify-content: center;
+}
+
+.about-image-text-container p {
+  max-width: 148px;
+  font-family: var(--body-font);
+  font-size: 10px;
+  line-height: 15px;
+  color: var(--white);
+  text-align: center;
+  margin: auto;
+  padding-top: 3px;
+}
+
+.about-image-text-container {
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 179px;
+  height: 340px;
+  margin-top: 20px;
+}
+
+.about-background-image {
+  background-image:  linear-gradient(rgba(20, 33, 61, 0.8), 
+  rgba(20, 33, 61, 0.8)),url(/images/tommy-sadler-3RPvHrzep2g-unsplash.jpg);
+  background-position: center 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 120px;
+  margin-top: 20px;
+}
+
+.about-background-text p {
+  font-size: 10px;
+  font-family: var(--body-font);
+  color: var(--white);
+  max-width: 282px;
+  text-align: center;
+  margin-top: 25px;
+}
+
+.about-background-text {
+  display: flex;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  h1 {
+    text-align: center;
+    font-family: var(--body-font);
+    font-size: 20px;
+    padding-bottom: 20px;
+  }
+  
+  .about-image {
+    width: 300px;
+    height: 360px;
+    margin-left: 10px;
+  }
+
+  .about-image-text-container p {
+    max-width: 280px;
+    font-family: var(--body-font);
+    font-size: 16px;
+    line-height: 23px;
+    color: var(--white);
+    text-align: center;
+    margin: auto;
+    padding-top: 15px;
+  }
+  
+  .about-image-text-container {
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 320px;
+    height: 500px;
+    margin-top: 30px;
+  }
+
+  .about-background-image {
+    background-image:  linear-gradient(rgba(20, 33, 61, 0.8), 
+    rgba(20, 33, 61, 0.8)),url(/images/tommy-sadler-3RPvHrzep2g-unsplash.jpg);
+    background-position: center 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 200px;
+    margin-top: 40px;
+  }
+  
+  .about-background-text p {
+    font-size: 16px;
+    font-family: var(--body-font);
+    color: var(--white);
+    max-width: 600px;
+    line-height: 25px;
+    text-align: center;
+    margin-top: 50px;
+  }
+}
+
+@media (min-width: 1200px) {
+  h1 {
+    text-align: center;
+    font-family: var(--body-font);
+    font-size: 24px;
+    padding-bottom: 25px;
+  }
+  
+  .about-image {
+    width: 450px;
+    height: 520px;
+    margin-left: 10px;
+  }
+
+  .about-image-text-container p {
+    max-width: 370px;
+    font-family: var(--body-font);
+    font-size: 20px;
+    line-height: 35px;
+    color: var(--white);
+    text-align: center;
+    margin: auto;
+    padding-top: 25px;
+  }
+  
+  .about-image-text-container {
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 450px;
+    height: 700px;
+    margin-top: 40px;
+  }
+
+  .about-background-image {
+    background-image:  linear-gradient(rgba(20, 33, 61, 0.8), 
+    rgba(20, 33, 61, 0.8)),url(/images/tommy-sadler-3RPvHrzep2g-unsplash.jpg);
+    background-position: center 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 250px;
+    margin-top: 40px;
+  }
+  
+  .about-background-text p {
+    font-size: 16px;
+    font-family: var(--body-font);
+    color: var(--white);
+    max-width: 900px;
+    line-height: 35px;
+    text-align: center;
+    margin-top: 70px;
+  }
+}
+

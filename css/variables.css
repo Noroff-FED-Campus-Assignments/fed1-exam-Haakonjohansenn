@@ -5,5 +5,8 @@
  */
 
 :root {
-  /* Add your CSS variables here */
+  --main-color: #fca311;
+  --secondary-color: #14213D;
+  --black: #000000;
+  --white: #ffffff;
 }

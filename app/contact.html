@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/css/header-footer.css" rel="stylesheet" />
+    <link href="/css/contact.css" rel="stylesheet">
+    <script defer src="/js/contact.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <div class="header-parent">
+        <div class="logo-container">
+          <a href="index.html">
+            <img src="/images/Logo.png" class="logo-img" alt="logo" />
+          </a>
+        </div>
+        <div class="nav-bar">
+          <nav class="nav-bar">
+            <ul class="nav-menu">
+              <li><a href="/index.html">Home</a></li>
+              <li><a href="/app/blog.html">Blog</a></li>
+              <li><a href="/app/about.html">About</a></li>
+              <li><a href="/app/contact.html">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="form-parent-container">
+        <section role="form-section">
+          <p id="js-message-container" class="error-message"></p>
+
+          <form class="c-form" id="js-form" autocomplete="on">
+            <div class="form-items">
+              <label for="js-name">Name:</label>
+              <input type="text" id="js-name" name="name" required />
+              <p
+                class="validation-container"
+                data-id="js-validation-message1"
+              ></p>
+            </div>
+
+            <div class="form-items">
+              <label for="js-email">Email Address:</label>
+              <input type="email" id="js-email" name="email" required />
+              <p
+                class="validation-container"
+                data-id="js-validation-message3"
+              ></p>
+            </div>
+
+            <div class="form-items">
+              <label for="js-subject">Subject:</label>
+              <input type="text" id="js-subject" name="subject" required />
+              <p
+                class="validation-container"
+                data-id="js-validation-message2"
+              ></p>
+            </div>
+
+
+            <div class="form-items">
+              <label for="js-message">Message:</label>
+              <textarea id="js-message" name="message" rows="5" cols="60" required></textarea>
+              <p
+                class="validation-container"
+                data-id="js-validation-message4"
+              ></p>
+            </div>
+
+            <div class="button-container">
+              <button type="submit" class="submit-button">Submit</button>
+            </div>
+          </form>
+        </section>
+      </div>
+    </main>
+    <footer>
+      <div class="parent-footer">
+        <div class="footer-logo-container">
+          <img src="/images/Logo.png" alt="logo" />
+        </div>
+        <div class="footer-nav">
+          <nav class="footer-navbar">
+            <ul class="footer-navmenu">
+              <li><a href="/app/contact.html">Contact Me</a></li>
+              <li><a href="/app/about.html">My story</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
