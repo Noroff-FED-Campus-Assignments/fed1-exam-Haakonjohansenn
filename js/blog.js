@@ -92,4 +92,3 @@ function closeModal(event) {
 loadMoreButton.addEventListener("click", function () {
   setTimeout(fetchPosts, 500);
 });
-
