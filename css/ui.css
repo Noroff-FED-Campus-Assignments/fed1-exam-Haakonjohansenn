@@ -110,7 +110,7 @@ a {
   color: var(--black);
 }
 
-a:hover {
+.post-title h2:hover {
   text-decoration: underline;
   opacity: 0.7;
 }
