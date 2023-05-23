@@ -59,10 +59,13 @@ const url = "https://discovertublog.flywheelsites.com/wp-json/wp/v2/posts";
 async function fetchPosts() {
   try {
     const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error("Error loading posts. Please try again later.");
+    }
     const jsonResult = await response.json();
     const posts = jsonResult;
 
-    posts.forEach(function(post){
+    posts.forEach(function (post) {
       const parser = new DOMParser();
       const doc = parser.parseFromString(post.content.rendered, 'text/html');
       const images = doc.querySelectorAll('img');
@@ -73,7 +76,7 @@ async function fetchPosts() {
       }
 
       resultsContainer.innerHTML += `
-        <div class="parent-container">
+        <a href="../app/details.html?id=${post.id}" class="parent-container">
           <div class="card-container">
             <div class="post-image">
               ${imageHtml}
@@ -82,7 +85,7 @@ async function fetchPosts() {
               <h2>${post.title.rendered}</h2>
             </div>
           </div>
-        </div>
+        </a>
       `;
     });
 
@@ -109,16 +112,14 @@ async function fetchPosts() {
       items.style.transform = `translateX(${currentPosition}px)`;
     });
 
-  } catch (e){
+  } catch (e) {
+    displayErrorMessage(e.message);
     console.log(e);
-  };
-};
+  }
+}
+
+function displayErrorMessage(message) {
+  resultsContainer.innerHTML = `<div class="error-message">${message}</div>`;
+}
 
 fetchPosts();
-
-
-
-
-
-
-
