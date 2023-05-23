@@ -3,10 +3,10 @@ import { resolve } from "path";
 import { defineConfig } from "vite";
 export default defineConfig({
   build: {
+    emptyOutDir: true,
     rollupOptions: {
       input: {
         main: resolve(__dirname, "index.html"),
-        // ADD YOUR PAGES HERE
          contact: resolve(__dirname, "contact.html"),
          blog: resolve(__dirname, "blog.html"),
          detail: resolve(__dirname, "details.html"),
