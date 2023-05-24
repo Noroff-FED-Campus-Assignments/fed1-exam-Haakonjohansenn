@@ -72,6 +72,11 @@ label {
   margin-bottom: 10px;
 }
 
+footer {
+  position: fixed;
+  bottom: 0;
+}
+
 @media (min-width: 768px) {
   input {
     width: 450px;

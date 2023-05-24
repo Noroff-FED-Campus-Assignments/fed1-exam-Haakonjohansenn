@@ -43,7 +43,7 @@ formEl.addEventListener("submit", function (event) {
   }
 
   if (!messageValid) {
-    alert("Please enter a valid address");
+    alert("Please enter a valid message");
     return;
   }
 

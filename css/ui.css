@@ -163,6 +163,10 @@ a {
   cursor: pointer;
 }
 
+.carousel-items.transition-reset {
+  transition: none;
+}
+
 .carousel-nav button:focus {
   outline: none;
 }

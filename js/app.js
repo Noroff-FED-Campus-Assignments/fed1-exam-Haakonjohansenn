@@ -50,12 +50,23 @@ async function fetchPosts() {
       items.style.transform = `translateX(${currentPosition}px)`;
     });
 
+
     nextBtn.addEventListener("click", () => {
       currentPosition -= itemWidth + margin;
+      
       if (currentPosition <= -(itemWidth + margin) * (posts.length - 1)) {
         currentPosition = 0;
       }
+      
       items.style.transform = `translateX(${currentPosition}px)`;
+    
+      if (currentPosition === -(itemWidth + margin) * (posts.length - 1) - itemWidth) {
+        items.classList.add("transition-reset");
+        setTimeout(() => {
+          items.classList.remove("transition-reset");
+          items.style.transform = `translateX(${currentPosition}px)`;
+        }, 0);
+      }
     });
   } catch (e) {
     displayErrorMessage(e.message);
