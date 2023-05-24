@@ -1,10 +1,10 @@
 :root {
   --main-color: #fca311;
-  --secondary-color: #14213D;
+  --secondary-color: #14213d;
   --black: #000000;
   --white: #ffffff;
-  --header-font: 'Bebas Neue', cursive;
-  --body-font: 'Merriweather Sans', sans-serif;
+  --header-font: "Bebas Neue", cursive;
+  --body-font: "Merriweather Sans", sans-serif;
   --posts-color: #e5e5e5;
 }
 
@@ -45,8 +45,11 @@ h1 {
 }
 
 .about-background-image {
-  background-image:  linear-gradient(rgba(20, 33, 61, 0.8), 
-  rgba(20, 33, 61, 0.8)),url(/images/tommy-sadler-3RPvHrzep2g-unsplash.jpg);
+  background-image: linear-gradient(
+      rgba(20, 33, 61, 0.8),
+      rgba(20, 33, 61, 0.8)
+    ),
+    url(/images/tommy-sadler-3RPvHrzep2g-unsplash.jpg);
   background-position: center 50%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -75,7 +78,7 @@ h1 {
     font-size: 20px;
     padding-bottom: 20px;
   }
-  
+
   .about-image {
     width: 300px;
     height: 360px;
@@ -92,7 +95,7 @@ h1 {
     margin: auto;
     padding-top: 15px;
   }
-  
+
   .about-image-text-container {
     background-color: rgba(0, 0, 0, 0.7);
     width: 320px;
@@ -101,15 +104,18 @@ h1 {
   }
 
   .about-background-image {
-    background-image:  linear-gradient(rgba(20, 33, 61, 0.8), 
-    rgba(20, 33, 61, 0.8)),url(/images/tommy-sadler-3RPvHrzep2g-unsplash.jpg);
+    background-image: linear-gradient(
+        rgba(20, 33, 61, 0.8),
+        rgba(20, 33, 61, 0.8)
+      ),
+      url(/images/tommy-sadler-3RPvHrzep2g-unsplash.jpg);
     background-position: center 50%;
     background-repeat: no-repeat;
     background-size: cover;
     height: 200px;
     margin-top: 40px;
   }
-  
+
   .about-background-text p {
     font-size: 16px;
     font-family: var(--body-font);
@@ -128,7 +134,7 @@ h1 {
     font-size: 24px;
     padding-bottom: 25px;
   }
-  
+
   .about-image {
     width: 450px;
     height: 520px;
@@ -145,7 +151,7 @@ h1 {
     margin: auto;
     padding-top: 25px;
   }
-  
+
   .about-image-text-container {
     background-color: rgba(0, 0, 0, 0.7);
     width: 450px;
@@ -154,15 +160,18 @@ h1 {
   }
 
   .about-background-image {
-    background-image:  linear-gradient(rgba(20, 33, 61, 0.8), 
-    rgba(20, 33, 61, 0.8)),url(/images/tommy-sadler-3RPvHrzep2g-unsplash.jpg);
+    background-image: linear-gradient(
+        rgba(20, 33, 61, 0.8),
+        rgba(20, 33, 61, 0.8)
+      ),
+      url(/images/tommy-sadler-3RPvHrzep2g-unsplash.jpg);
     background-position: center 50%;
     background-repeat: no-repeat;
     background-size: cover;
     height: 250px;
     margin-top: 40px;
   }
-  
+
   .about-background-text p {
     font-size: 16px;
     font-family: var(--body-font);
@@ -173,4 +182,3 @@ h1 {
     margin-top: 70px;
   }
 }
-

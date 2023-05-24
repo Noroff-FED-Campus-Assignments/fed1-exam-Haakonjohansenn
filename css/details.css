@@ -1,10 +1,10 @@
 :root {
   --main-color: #fca311;
-  --secondary-color: #14213D;
+  --secondary-color: #14213d;
   --black: #000000;
   --white: #ffffff;
-  --header-font: 'Bebas Neue', cursive;
-  --body-font: 'Merriweather Sans', sans-serif;
+  --header-font: "Bebas Neue", cursive;
+  --body-font: "Merriweather Sans", sans-serif;
   --posts-color: #e5e5e5;
 }
 
@@ -95,19 +95,19 @@ footer {
     line-height: 30px;
     margin: auto;
   }
-  
+
   .wp-block-image img {
     width: 500px;
     height: 600px;
     object-fit: contain;
     margin: 20px 0 20px 0;
   }
-  
+
   .wp-block-image {
     display: flex;
     justify-content: center;
   }
-  
+
   h2 {
     text-align: center;
     margin: auto;
@@ -115,7 +115,7 @@ footer {
     padding: 25px 0 25px 0;
     width: 500px;
   }
-  
+
   footer {
     margin-top: 25px;
   }
@@ -128,19 +128,19 @@ footer {
     line-height: 35px;
     margin: auto;
   }
-  
+
   .wp-block-image img {
     width: 800px;
     height: 900px;
     object-fit: contain;
     margin: 20px 0 20px 0;
   }
-  
+
   .wp-block-image {
     display: flex;
     justify-content: center;
   }
-  
+
   h2 {
     text-align: center;
     font-size: 26px;
@@ -148,7 +148,7 @@ footer {
     padding: 35px 0 35px 0;
     width: 800px;
   }
-  
+
   footer {
     margin-top: 35px;
   }

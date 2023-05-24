@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Gentium+Book+Plus:ital,wght@1,700&family=Merriweather+Sans:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Gentium+Book+Plus:ital,wght@1,700&family=Merriweather+Sans:wght@300&display=swap");
 
 :root {
   --main-color: #fca311;
-  --secondary-color: #14213D;
+  --secondary-color: #14213d;
   --black: #000000;
   --white: #ffffff;
-  --header-font: 'Bebas Neue', cursive;
+  --header-font: "Bebas Neue", cursive;
 }
 
 html,
@@ -31,7 +31,8 @@ header {
   align-items: center;
 }
 
-.nav-bar, .nav-bar-parent {
+.nav-bar,
+.nav-bar-parent {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -96,14 +97,14 @@ footer {
     padding: 2px;
     align-items: center;
   }
-  
+
   .nav-bar {
     display: flex;
     flex-direction: row;
     justify-content: center;
     width: 100%;
   }
-  
+
   .nav-menu {
     display: flex;
     list-style-type: none;

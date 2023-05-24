@@ -60,27 +60,56 @@ async function fetchPosts() {
 
 fetchPosts();
 
+const sortSelect = document.querySelector("#sort-select");
+sortSelect.addEventListener("change", sortPosts);
+
+function sortPosts() {
+  const sortOrder = sortSelect.value;
+  const sortedPosts = Array.from(resultsContainer.children).sort((a, b) => {
+    const titleA = a.querySelector(".post-title h2").innerText;
+    const titleB = b.querySelector(".post-title h2").innerText;
+
+    if (sortOrder === "asc") {
+      return titleA.localeCompare(titleB);
+    } else if (sortOrder === "desc") {
+      return titleB.localeCompare(titleA);
+    }
+  });
+
+  // Remove existing posts
+  while (resultsContainer.firstChild) {
+    resultsContainer.firstChild.remove();
+  }
+
+  // Append sorted posts
+  sortedPosts.forEach((post) => {
+    resultsContainer.appendChild(post);
+  });
+
+  addImageClickListeners();
+}
+
 function addImageClickListeners() {
-  const images = document.querySelectorAll('.post-images');
+  const images = document.querySelectorAll(".post-images");
   images.forEach((image) => {
-    image.addEventListener('click', openModal);
+    image.addEventListener("click", openModal);
   });
 }
 
 function openModal(event) {
   const clickedImage = event.target;
-  const imageSrc = clickedImage.getAttribute('src');
+  const imageSrc = clickedImage.getAttribute("src");
 
-  const modalContainer = document.createElement('div');
-  modalContainer.classList.add('modal-container');
+  const modalContainer = document.createElement("div");
+  modalContainer.classList.add("modal-container");
 
-  const modalImage = document.createElement('img');
+  const modalImage = document.createElement("img");
   modalImage.src = imageSrc;
 
   modalContainer.appendChild(modalImage);
   document.body.appendChild(modalContainer);
 
-  modalContainer.addEventListener('click', closeModal);
+  modalContainer.addEventListener("click", closeModal);
 }
 
 function closeModal(event) {

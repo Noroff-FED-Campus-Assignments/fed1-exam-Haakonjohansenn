@@ -4,19 +4,30 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="This is the homepage of my blog Discover the unknown. It contains mostly visual content, but also a carousel containing the latest blog posts."
+    />
+    <meta name="keywords" content="HTML, CSS, JavaScript" />
+    <meta name="author" content="Haakon_Johansen" />
     <link href="./css/header-footer.css" rel="stylesheet" />
     <link href="./css/ui.css" rel="stylesheet" />
     <script type="module" defer src="./js/app.js"></script>
-<script>
-  (function(h,o,t,j,a,r){
-      h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-      h._hjSettings={hjid:3504436,hjsv:6};
-      a=o.getElementsByTagName('head')[0];
-      r=o.createElement('script');r.async=1;
-      r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-      a.appendChild(r);
-  })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-</script>
+    <script>
+      (function (h, o, t, j, a, r) {
+        h.hj =
+          h.hj ||
+          function () {
+            (h.hj.q = h.hj.q || []).push(arguments);
+          };
+        h._hjSettings = { hjid: 3504436, hjsv: 6 };
+        a = o.getElementsByTagName("head")[0];
+        r = o.createElement("script");
+        r.async = 1;
+        r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+        a.appendChild(r);
+      })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
+    </script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -25,7 +36,7 @@
       referrerpolicy="no-referrer"
     />
 
-    <title>Document</title>
+    <title>Homepage</title>
   </head>
   <body>
     <header>
@@ -55,21 +66,31 @@
               <div class="discover-img-container">
                 <img
                   src="/images/Discover The Unknown (1).png"
-                  alt="text"
+                  alt="discover the unknown text"
                   class="discover-the-unknown"
                 />
               </div>
-              <a href="/app/blog.html"><button class="read-blog-btn">Read Blog</button></a>
+              <a href="/app/blog.html"
+                ><button class="read-blog-btn">Read Blog</button></a
+              >
             </div>
           </div>
         </div>
         <div class="hero-secondary-parent">
           <div class="hero-secondary-container">
             <div class="hero-secondary-image-container">
-              <img src="/images/mick-haupt-Xa9HMvD9nPc-unsplash2.webp" alt="picture of text" class="hero-secondary-image">
+              <img
+                src="/images/mick-haupt-Xa9HMvD9nPc-unsplash2.webp"
+                alt="picture of a bridge"
+                class="hero-secondary-image"
+              />
             </div>
             <div class="hero-secondary-text">
-              <img src="/images/Hero-text (1).png" alt="image of text" class="hero-secondary-text-image">
+              <img
+                src="/images/Hero-text (1).png"
+                alt="image of text"
+                class="hero-secondary-text-image"
+              />
             </div>
           </div>
         </div>
@@ -79,8 +100,7 @@
         <div class="carousel-parent">
           <h1>Latest Posts</h1>
           <div class="carousel-container">
-            <div class="carousel-items">
-            </div>
+            <div class="carousel-items"></div>
             <div class="carousel-nav">
               <button class="prev">Prev</button>
               <button class="next">Next</button>
@@ -97,7 +117,7 @@
         <div class="footer-nav">
           <nav class="footer-navbar">
             <ul class="footer-navmenu">
-              <li><a href="/app/Contact.html">Contact Me</a></li>
+              <li><a href="/app/contact.html">Contact Me</a></li>
               <li><a href="/app/about.html">My story</a></li>
             </ul>
           </nav>
