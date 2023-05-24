@@ -6,7 +6,7 @@ const messageEl = document.querySelector("#js-message");
 const reminderEl = document.querySelector("#js-message-container");
 
 const minLengthRegexName = /^[a-zA-Z]{5,}/;
-const minLengthRegexSubject = /^[a-zA-Z]{10,}/;
+const minLengthRegexSubject = /^[a-zA-Z]{15,}/;
 const minLengthRegexMessage = /^[a-zA-Z]{25,}/;
 
 const emailRegex =
