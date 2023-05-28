@@ -91,6 +91,11 @@
   padding-top: 20px;
 }
 
+#sort-select {
+  display: flex;
+  justify-content: center;
+}
+
 .post-images {
   object-fit: cover;
   width: 90px;

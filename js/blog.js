@@ -76,12 +76,10 @@ function sortPosts() {
     }
   });
 
-  // Remove existing posts
   while (resultsContainer.firstChild) {
     resultsContainer.firstChild.remove();
   }
 
-  // Append sorted posts
   sortedPosts.forEach((post) => {
     resultsContainer.appendChild(post);
   });
