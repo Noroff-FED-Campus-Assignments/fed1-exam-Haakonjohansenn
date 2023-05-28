@@ -1,53 +1,81 @@
-/*
-============================================
-Constants
-@example: https://github.com/S3ak/fed-javascript1-api-calls/blob/main/examples/games.html#L66
-============================================
-*/
+const resultsContainer = document.querySelector(".carousel-items");
 
-// TODO: Get DOM elements from the DOM
+const url = "https://discovertublog.flywheelsites.com/wp-json/wp/v2/posts";
 
-/*
-============================================
-DOM manipulation
-@example: https://github.com/S3ak/fed-javascript1-api-calls/blob/main/examples/games.html#L89
-============================================
-*/
+async function fetchPosts() {
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error("Error loading posts. Please try again later.");
+    }
+    const jsonResult = await response.json();
+    const posts = jsonResult;
 
-// TODO: Fetch and Render the list to the DOM
+    posts.forEach(function (post) {
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(post.content.rendered, "text/html");
+      const images = doc.querySelectorAll("img");
+      let imageHtml = "";
+      if (images.length > 0) {
+        const imageSrc = images[0].getAttribute("src");
+        imageHtml = `<img class="post-images" src="${imageSrc}" alt="${post.title.rendered}" />`;
+      }
 
-// TODO: Create event listeners for the filters and the search
+      resultsContainer.innerHTML += `
+        <a href="../app/details.html?id=${post.id}" class="parent-container">
+          <div class="card-container">
+            <div class="post-image">
+              ${imageHtml}
+            </div>
+            <div class="post-title">
+              <h2>${post.title.rendered}</h2>
+            </div>
+          </div>
+        </a>
+      `;
+    });
 
-/**
- * TODO: Create an event listener to sort the list.
- * @example https://github.com/S3ak/fed-javascript1-api-calls/blob/main/examples/search-form.html#L91
- */
+    const prevBtn = document.querySelector(".prev");
+    const nextBtn = document.querySelector(".next");
+    const items = document.querySelector(".carousel-items");
+    const itemWidth = 210;
+    const margin = 10;
+    let currentPosition = 0;
 
-/*
-============================================
-Data fectching
-@example: https://github.com/S3ak/fed-javascript1-api-calls/blob/main/examples/games.html#L104
-============================================
-*/
+    prevBtn.addEventListener("click", () => {
+      currentPosition += itemWidth + margin;
+      if (currentPosition > 0) {
+        currentPosition = -(itemWidth + margin) * (posts.length - 1);
+      }
+      items.style.transform = `translateX(${currentPosition}px)`;
+    });
 
-// TODO: Fetch an array of objects from the API
 
-/*
-============================================
-Helper functions
-https://github.com/S3ak/fed-javascript1-api-calls/blob/main/examples/games.html#L154
-============================================
-*/
+    nextBtn.addEventListener("click", () => {
+      currentPosition -= itemWidth + margin;
+      
+      if (currentPosition <= -(itemWidth + margin) * (posts.length - 1)) {
+        currentPosition = 0;
+      }
+      
+      items.style.transform = `translateX(${currentPosition}px)`;
+    
+      if (currentPosition === -(itemWidth + margin) * (posts.length - 1) - itemWidth) {
+        items.classList.add("transition-reset");
+        setTimeout(() => {
+          items.classList.remove("transition-reset");
+          items.style.transform = `translateX(${currentPosition}px)`;
+        }, 0);
+      }
+    });
+  } catch (e) {
+    displayErrorMessage(e.message);
+    console.log(e);
+  }
+}
 
-/**
- * TODO: Create a function to filter the list of item.
- * @example https://github.com/S3ak/fed-javascript1-api-calls/blob/main/examples/search-form.html#L135
- * @param {item} item The object with properties from the fetched JSON data.
- * @param {searchTerm} searchTerm The string used to check if the object title contains it.
- */
+function displayErrorMessage(message) {
+  resultsContainer.innerHTML = `<div class="error-message">${message}</div>`;
+}
 
-/**
- * TODO: Create a function to create a DOM element.
- * @example https://github.com/S3ak/fed-javascript1-api-calls/blob/main/src/js/detail.js#L36
- * @param {item} item The object with properties from the fetched JSON data.
- */
+fetchPosts();

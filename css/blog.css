@@ -1,0 +1,268 @@
+:root {
+  --main-color: #fca311;
+  --secondary-color: #14213d;
+  --black: #000000;
+  --white: #ffffff;
+  --header-font: "Bebas Neue", cursive;
+  --body-font: "Merriweather Sans", sans-serif;
+  --posts-color: #e5e5e5;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+.hero-header-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(/images/devon-hawkins-_v0LMRZAtAo-unsplash.jpg);
+  background-position: center 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 140px;
+}
+
+.hero-header-container {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-header-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.blog-align {
+  text-align: center;
+}
+
+h1 {
+  font-family: var(--header-font);
+  color: var(--white);
+}
+
+h2 {
+  font-family: var(--body-font);
+  text-align: center;
+}
+
+.blog-header-title {
+  margin: 10px 0 10px 0;
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.post-images {
+  width: 100%;
+  object-fit: cover;
+  height: 75px;
+  margin: auto;
+}
+
+.post-images:hover {
+  cursor: pointer;
+}
+
+.post-title h2 {
+  font-family: var(--body-font);
+  font-size: 10px;
+  max-width: 75px;
+  text-align: center;
+  color: var(--black);
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  border: 1px solid var(--posts-color);
+  border-radius: 5px;
+  max-width: 75px;
+  margin: 10px;
+}
+
+.card-container:hover {
+  transform: scale(1.1);
+  text-decoration: underline;
+}
+
+.card-container h2:hover {
+  opacity: 0.7;
+}
+
+.parent-container {
+  display: flex;
+}
+
+#results-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.load-more-container {
+  display: flex;
+  justify-content: center;
+}
+
+#load-more {
+  background-color: var(--main-color);
+  border: none;
+  font-family: var(--body-font);
+  font-weight: 900;
+  padding: 7px;
+  border-radius: 15px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+button:hover {
+  opacity: 0.8;
+  transition: opacity 0.2s ease-in;
+}
+
+.modal-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.modal-container img {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.modal-container img:hover {
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .post-images {
+    width: 100%;
+    height: 140px;
+    margin: auto;
+  }
+
+  .hero-header-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url(/images/devon-hawkins-_v0LMRZAtAo-unsplash.jpg);
+    background-position: center 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 180px;
+  }
+
+  .hero-header-text {
+    margin-top: 60px;
+  }
+
+  .blog-header-title {
+    margin: 15px 0 15px 0;
+    font-size: 20px;
+  }
+
+  .post-title h2 {
+    font-family: var(--body-font);
+    font-size: 12px;
+    min-width: 140px;
+    text-align: center;
+    color: var(--black);
+  }
+
+  .card-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    border: 1px solid var(--posts-color);
+    border-radius: 10px;
+    min-width: 140px;
+    margin: 15px;
+  }
+
+  #load-more {
+    width: 200px;
+    margin-bottom: 15px;
+  }
+}
+
+@media (min-width: 768px) {
+  .post-images {
+    width: 100%;
+    height: 180px;
+    margin: auto;
+  }
+
+  .hero-header-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url(/images/devon-hawkins-_v0LMRZAtAo-unsplash.jpg);
+    background-position: center 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 220px;
+  }
+
+  .hero-header-text {
+    margin-top: 90px;
+  }
+
+  .post-title h2 {
+    font-family: var(--body-font);
+    font-size: 14px;
+    min-width: 180px;
+    text-align: center;
+    color: var(--black);
+  }
+
+  .card-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    border: 1px solid var(--posts-color);
+    border-radius: 13px;
+    min-width: 180px;
+    margin: 18px;
+  }
+
+  #load-more {
+    width: 300px;
+    margin-bottom: 20px;
+  }
+}

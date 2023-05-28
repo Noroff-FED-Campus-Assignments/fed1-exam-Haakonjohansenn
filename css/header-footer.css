@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Gentium+Book+Plus:ital,wght@1,700&family=Merriweather+Sans:wght@300&display=swap");
+
+:root {
+  --main-color: #fca311;
+  --secondary-color: #14213d;
+  --black: #000000;
+  --white: #ffffff;
+  --header-font: "Bebas Neue", cursive;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.logo-img {
+  margin-left: 10px;
+}
+
+header {
+  background-color: var(--main-color);
+  width: 100%;
+}
+
+.header-parent {
+  display: flex;
+  padding: 2px;
+  align-items: center;
+}
+
+.nav-bar,
+.nav-bar-parent {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.header {
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu {
+  display: flex;
+  list-style-type: none;
+  gap: 20px;
+  margin-left: auto;
+  padding-right: 20px;
+}
+
+ul li a:hover {
+  color: var(--white);
+  opacity: 0.5;
+  transition: 0.1s ease-in-out;
+}
+
+ul li a {
+  text-decoration: none;
+  color: var(--black);
+  font-family: var(--header-font);
+}
+
+footer {
+  background-color: var(--main-color);
+  width: 100%;
+}
+
+.parent-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.footer-navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.footer-navmenu {
+  display: flex;
+  list-style-type: none;
+  gap: 20px;
+  margin: 0;
+  margin-left: auto;
+}
+
+@media (min-width: 768px) {
+  .header-parent {
+    display: flex;
+    padding: 2px;
+    align-items: center;
+  }
+
+  .nav-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .nav-menu {
+    display: flex;
+    list-style-type: none;
+    gap: 50px;
+    justify-content: center;
+    font-size: 18px;
+  }
+
+  .footer-navmenu {
+    display: flex;
+    list-style-type: none;
+    gap: 20px;
+    margin: 0;
+    margin-left: auto;
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .nav-menu {
+    font-size: 20px;
+  }
+
+  .footer-navmenu {
+    display: flex;
+    list-style-type: none;
+    gap: 20px;
+    margin: 0;
+    margin-left: auto;
+    font-size: 20px;
+  }
+}

@@ -1,46 +1,67 @@
-/*
-============================================
-Constants
-@example: https://github.com/S3ak/fed-javascript1-api-calls/blob/main/examples/games.html#L66
-============================================
-*/
+const postContainer = document.querySelector(".details-container");
+const body = document.querySelector("body");
 
-// TODO: Get DOM elements from the DOM
+const queryString = document.location.search;
+const params = new URLSearchParams(queryString);
+const id = params.get("id");
+const url =
+  "https://discovertublog.flywheelsites.com/wp-json/wp/v2/posts/" + id;
 
-// TODO: Get the query parameter from the URL
+async function fetchPost() {
+  try {
+    const detailsResponse = await fetch(url);
+    if (!detailsResponse.ok) {
+      throw new Error("Error loading post details. Please try again later.");
+    }
+    const detailsResult = await detailsResponse.json();
 
-// TODO: Get the id from the query parameter
+    newHtml(detailsResult);
+    addImageModalEventListeners();
 
-// TODO: Create a new URL with the id @example: https://www.youtube.com/shorts/ps7EkRaRMzs
+    document.title = `${detailsResult.title.rendered}`;
+  } catch (e) {
+    displayErrorMessage(e.message);
+    console.log(e);
+  }
+}
 
-/*
-============================================
-DOM manipulation
-@example: https://github.com/S3ak/fed-javascript1-api-calls/blob/main/examples/games.html#L89
-============================================
-*/
+function newHtml(detailsResult) {
+  postContainer.innerHTML = `<div class="parent-container">
+                               <div class="post-text">
+                                 <h2>${detailsResult.title.rendered}</h2>
+                                 <p>${detailsResult.content.rendered}</p>
+                               </div>
+                             </div>`;
+}
 
-// TODO: Fetch and Render the list to the DOM
+function addImageModalEventListeners() {
+  const images = postContainer.querySelectorAll("img");
+  images.forEach((image) => {
+    image.addEventListener("click", displayModal);
+  });
+}
 
-// TODO: Create event listeners for the filters and the search
+function displayModal(event) {
+  const modalContainer = document.createElement("div");
+  modalContainer.className = "modal-container";
+  const modalImage = document.createElement("img");
+  modalImage.src = event.target.src;
+  modalImage.className = "modal-image";
 
-/*
-============================================
-Data fectching
-@example: https://github.com/S3ak/fed-javascript1-api-calls/blob/main/examples/games.html#L104
-============================================
-*/
+  modalContainer.appendChild(modalImage);
+  body.appendChild(modalContainer);
 
-// TODO: Fetch an a single of objects from the API
+  modalContainer.addEventListener("click", closeModal);
+}
 
-/*
-============================================
-Helper functions
-============================================
-*/
+function closeModal(event) {
+  if (event.target.className === "modal-container") {
+    event.target.remove();
+  }
+}
 
-/**
- * TODO: Create a function to create a DOM element.
- * @example: https://github.com/S3ak/fed-javascript1-api-calls/blob/main/src/js/detail.js#L36
- * @param {item} item The object with properties from the fetched JSON data.
- */
+function displayErrorMessage(message) {
+  postContainer.innerHTML = `<div class="error-message">${message}</div>`;
+}
+
+fetchPost();
